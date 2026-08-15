@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bradcerb Brand Kit</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Inter:wght@400;500;700&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --cream: #fbf7ef;
+      --paper: #ffffff;
+      --ink: #000000;
+      --ink-muted: #6b6b6b;
+      --night: #111111;
+      --brand-orange: #f97316;
+      --brand-blue: #2563eb;
+      --brand-yellow: #ffdb32;
+      --brand-green: #22c55e;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: Inter, ui-sans-serif, system-ui, sans-serif;
+      background: var(--cream);
+      color: var(--ink);
+      line-height: 1.6;
+    }
+    header, footer {
+      background: var(--night);
+      color: var(--cream);
+      padding: 24px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .wordmark {
+      font-family: "Archivo Black", "Arial Black", sans-serif;
+      font-size: 22px;
+      letter-spacing: -0.02em;
+    }
+    header a, footer a { color: var(--brand-orange); text-decoration: none; font-size: 14px; }
+    .hero { padding: 72px 40px 48px; max-width: 880px; }
+    .eyebrow {
+      color: var(--brand-orange);
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      margin-bottom: 12px;
+    }
+    h1, h2 { font-family: "Archivo Black", "Arial Black", sans-serif; letter-spacing: -0.03em; }
+    h1 { font-size: 44px; line-height: 1.1; margin-bottom: 16px; }
+    h2 { font-size: 24px; margin-bottom: 16px; }
+    .hero p { font-size: 18px; max-width: 640px; }
+    main { max-width: 880px; padding: 0 40px 72px; }
+    section { margin-top: 48px; }
+    .swatches { display: flex; flex-wrap: wrap; gap: 12px; }
+    .swatch {
+      background: var(--paper);
+      border: 2px solid var(--ink);
+      box-shadow: 4px 4px 0 var(--ink);
+      padding: 12px 14px;
+      min-width: 140px;
+    }
+    .dot { width: 28px; height: 28px; border: 2px solid var(--ink); margin-bottom: 8px; }
+    .swatch strong { display: block; font-size: 13px; }
+    .swatch span { font-family: ui-monospace, monospace; font-size: 12px; color: var(--ink-muted); }
+    .files { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 16px; }
+    .card {
+      background: var(--paper);
+      border: 2px solid var(--ink);
+      box-shadow: 4px 4px 0 var(--ink);
+      padding: 20px;
+    }
+    .card code { color: var(--brand-orange); font-size: 13px; }
+    .card h3 { margin: 8px 0; font-size: 16px; }
+    .card p { font-size: 14px; color: var(--ink-muted); }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="wordmark">bradcerb</div>
+    <a href="https://github.com/bradcerb/bradcerb-brand">GitHub</a>
+  </header>
+  <div class="hero">
+    <p class="eyebrow">bradcerb.com / brand</p>
+    <h1>Bradcerb Brand Kit</h1>
+    <p>Single source of truth for Brad Erb's personal brand. Load <code>brand-kit.json</code> before producing branded work.</p>
+  </div>
+  <main>
+    <section>
+      <p class="eyebrow">Color</p>
+      <h2>Palette</h2>
+      <div class="swatches">
+        <div class="swatch"><div class="dot" style="background:#fbf7ef"></div><strong>Cream</strong><span>#fbf7ef</span></div>
+        <div class="swatch"><div class="dot" style="background:#000000"></div><strong>Ink</strong><span>#000000</span></div>
+        <div class="swatch"><div class="dot" style="background:#111111"></div><strong>Night</strong><span>#111111</span></div>
+        <div class="swatch"><div class="dot" style="background:#f97316"></div><strong>Orange</strong><span>#f97316</span></div>
+        <div class="swatch"><div class="dot" style="background:#2563eb"></div><strong>Blue</strong><span>#2563eb</span></div>
+        <div class="swatch"><div class="dot" style="background:#ffdb32"></div><strong>Yellow</strong><span>#ffdb32</span></div>
+        <div class="swatch"><div class="dot" style="background:#22c55e"></div><strong>Green</strong><span>#22c55e</span></div>
+      </div>
+    </section>
+    <section>
+      <p class="eyebrow">Repository</p>
+      <h2>Key files</h2>
+      <div class="files">
+        <div class="card"><code>brand-kit.json</code><h3>Brand kit</h3><p>Machine-readable colors, type, voice, and socials. Start here.</p></div>
+        <div class="card"><code>brand-guidelines.md</code><h3>Guidelines</h3><p>Voice, visual rules, and what not to mix with Triumph or Transform.</p></div>
+        <div class="card"><code>logos/</code><h3>Logos</h3><p>Add combination mark, mark, wordmark, and avatar files here.</p></div>
+      </div>
+    </section>
+  </main>
+  <footer>
+    <div class="wordmark">bradcerb</div>
+    <a href="https://bradcerb.com">bradcerb.com</a>
+  </footer>
+</body>
+</html>

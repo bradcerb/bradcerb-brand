@@ -1,0 +1,125 @@
+{
+  "version": "2026.08",
+  "base_url": "https://branding.bradcerb.com",
+  "brand": {
+    "name": "Brad Erb",
+    "public_name": "Bradcerb",
+    "tagline": "I build and teach AI work loops that turn recurring work into reliable, human-supervised systems.",
+    "website": "https://bradcerb.com",
+    "email": "brad@bradcerb.com"
+  },
+  "social": [
+    {
+      "label": "X",
+      "url": "https://x.com/bradcerb"
+    },
+    {
+      "label": "LinkedIn",
+      "url": "https://www.linkedin.com/in/brad-e-b3aa553b2/"
+    },
+    {
+      "label": "GitHub",
+      "url": "https://github.com/bradcerb"
+    },
+    {
+      "label": "YouTube",
+      "url": "https://youtube.com/@bradcerb"
+    }
+  ],
+  "color_system": {
+    "palette": {
+      "primary": {
+        "name": "Brand Orange",
+        "hex": "#f97316",
+        "text_on": "#ffffff",
+        "usage": "Primary accent, links, emphasis"
+      },
+      "secondary": {
+        "name": "Brand Blue",
+        "hex": "#2563eb",
+        "text_on": "#ffffff",
+        "usage": "Supporting accent"
+      },
+      "accent": {
+        "name": "Brand Yellow",
+        "hex": "#ffdb32",
+        "text_on": "#111111",
+        "usage": "Highlight"
+      },
+      "success": {
+        "name": "Brand Green",
+        "hex": "#22c55e",
+        "text_on": "#111111",
+        "usage": "Success and go states"
+      }
+    },
+    "surfaces": {
+      "cream": {
+        "hex": "#fbf7ef",
+        "usage": "Page background, paper"
+      },
+      "paper": {
+        "hex": "#ffffff",
+        "usage": "Cards and raised surfaces"
+      },
+      "ink": {
+        "hex": "#000000",
+        "usage": "Primary text"
+      },
+      "ink_muted": {
+        "hex": "#6b6b6b",
+        "usage": "Secondary text"
+      },
+      "night": {
+        "hex": "#111111",
+        "usage": "Dark surfaces"
+      }
+    },
+    "treatment": "Cream paper, pure ink, hard offset shadows, no blur."
+  },
+  "typography": {
+    "display": {
+      "family": "Archivo Black",
+      "fallback": "Arial Black, ui-sans-serif, sans-serif",
+      "source": "Google Fonts",
+      "usage": "Headlines, wordmark"
+    },
+    "primary": {
+      "family": "Inter",
+      "fallback": "ui-sans-serif, system-ui, sans-serif",
+      "source": "Google Fonts",
+      "default_weight": 400,
+      "usage": "Body copy"
+    }
+  },
+  "logos": {
+    "lockups": [],
+    "rules": [
+      "Add combination_mark, logo_mark, wordmark, and avatar files under logos/ before using a mark in production.",
+      "Until lockups exist, set the word bradcerb in Archivo Black.",
+      "Do not use Triumph, Magnus, or Transform marks in this kit."
+    ]
+  },
+  "voice": {
+    "summary": "Clear, direct, warm. Short sentences. No filler. No hype.",
+    "tone": [
+      "clear",
+      "direct",
+      "warm",
+      "practical",
+      "human"
+    ],
+    "avoid": [
+      "corporate jargon",
+      "hype",
+      "Triumph voice in personal work"
+    ],
+    "example_phrases": []
+  },
+  "rules": [
+    "brand-kit.json is the source of truth. Load it before producing branded work.",
+    "Do not invent colors, typefaces, or voice that contradict this file.",
+    "Keep personal brand work out of Triumph material, and Triumph material out of this kit.",
+    "Published site copy may be reused. New claims are not beliefs until Brad confirms them."
+  ]
+}
