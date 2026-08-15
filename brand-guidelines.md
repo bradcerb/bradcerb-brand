@@ -81,7 +81,14 @@ Honor `prefers-reduced-motion` in CSS, in JS, and with an alternate render when 
 
 Treatments: duotone, halftone, glitch (hover, desktop only), flag, none. Polaroid is its own frame.
 
-Brad Erb portrait: `assets/personas/brad-erb/brad-erb-portrait.png`.
+Kept assets:
+
+- Portrait: `assets/personas/brad-erb/brad-erb-portrait.png`
+- Avatar: `logos/avatar/brad-erb-avatar.png`
+- Bust: `assets/photos/bust.png` (classical sculpture, not a person)
+- Cityscape: `assets/photos/cityscape.png`
+
+Do not use the statue crop. Do not add work-sample images to this kit.
 
 ## Logo
 
