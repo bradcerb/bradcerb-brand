@@ -1,27 +1,37 @@
 # Bradcerb Design System
 
-Public-site design system for Brad Erb / Bradcerb. Agents should load this repo before producing personal branded work.
+Public-site design system for Brad Erb. Agents should load this repo before producing personal branded work.
 
 Live: https://branding.bradcerb.com
 
-This is **RetroUI**, the system implemented on [bradcerb/bradcerbcom](https://github.com/bradcerb/bradcerbcom). It is not Triumph Tech's brand kit.
+Inspired by RetroUI. Implemented in the [bradcerb/BradcerbV1](https://github.com/bradcerb/bradcerbv1) theme.
 
 ## Start here
 
-1. `brand-kit.json` — machine-readable tokens, components, voice, and rules
-2. `tokens.css` — drop-in CSS custom properties
-3. `brand-guidelines.md` — foundations, voice, lanes
-4. `components.md` — primitive inventory and usage
-5. `index.html` — visual reference
+1. `brand-kit.json` - machine-readable tokens, components, voice, and assets
+2. `scss/` - Bootstrap 5 + Sass source
+3. `css/brand.css` - compiled stylesheet for GitHub Pages
+4. `brand-guidelines.md` - foundations and voice
+5. `components.md` - primitive inventory
+6. `index.html` - visual reference
+
+## Styles
+
+Bootstrap 5 customized with Sass. Tokens live in `scss/_variables.scss`. Brand extras (press-effect, hard shadows, wordmark) live in `scss/_brand.scss`.
+
+```bash
+npm install
+npm run build:css
+```
+
+GitHub Pages serves the compiled `css/brand.css`. Rebuild it after you change Sass.
+
+## Wordmark
+
+Set **Brad Erb** in Archivo Black. That is the mark until more lockups land.
 
 ## Sources
 
-- Implementation: `bradcerb/bradcerbcom` (`resources/css/app.css`, `resources/js/components/retroui/`)
-- Skill: `.claude/skills/retroui-components/SKILL.md`
-- Inspiration board: [Figma](https://www.figma.com/file/d42XW4f4UDSD1EgcHxIsYf) (moodboard, not the token source)
-
-## What this is not
-
-- Not Triumph Invictus / Electric / Goldman Sans
-- Not the 2018 nomad / sketch mockups on the Inspiration page
-- Not the shadcn semantic theme used by the authed dashboard
+- Theme: `bradcerb/BradcerbV1` (`src/css/site.css`)
+- Inspiration: RetroUI
+- Moodboard: [Figma](https://www.figma.com/file/d42XW4f4UDSD1EgcHxIsYf) (not the token source)
