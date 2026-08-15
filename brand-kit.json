@@ -1,125 +1,166 @@
 {
-  "version": "2026.08",
+  "version": "2026.08.15",
+  "name": "Bradcerb RetroUI",
   "base_url": "https://branding.bradcerb.com",
+  "source": {
+    "implementation": "https://github.com/bradcerb/bradcerbcom",
+    "skill": ".claude/skills/retroui-components/SKILL.md",
+    "css": "resources/css/app.css",
+    "components": "resources/js/components/retroui/",
+    "figma_inspiration": "https://www.figma.com/file/d42XW4f4UDSD1EgcHxIsYf"
+  },
   "brand": {
     "name": "Brad Erb",
     "public_name": "Bradcerb",
     "tagline": "I build and teach AI work loops that turn recurring work into reliable, human-supervised systems.",
+    "one_liner": "Brad Erb helps mission-minded organizations put AI and agents to work, amplifying what their teams already do well, without losing the human part.",
     "website": "https://bradcerb.com",
     "email": "brad@bradcerb.com"
   },
-  "social": [
-    {
-      "label": "X",
-      "url": "https://x.com/bradcerb"
-    },
-    {
-      "label": "LinkedIn",
-      "url": "https://www.linkedin.com/in/brad-e-b3aa553b2/"
-    },
-    {
-      "label": "GitHub",
-      "url": "https://github.com/bradcerb"
-    },
-    {
-      "label": "YouTube",
-      "url": "https://youtube.com/@bradcerb"
-    }
-  ],
+  "lanes": {
+    "personal": "This kit. Digital strategy, AI and agents consulting, writing, speaking.",
+    "triumph": "Rock RMS and church-platform work stays at Triumph Tech. Do not use Triumph visual tokens here.",
+    "transform": "Builder proof only. Never pitch SEO services from this kit."
+  },
   "color_system": {
-    "palette": {
-      "primary": {
-        "name": "Brand Orange",
-        "hex": "#f97316",
-        "text_on": "#ffffff",
-        "usage": "Primary accent, links, emphasis"
-      },
-      "secondary": {
-        "name": "Brand Blue",
-        "hex": "#2563eb",
-        "text_on": "#ffffff",
-        "usage": "Supporting accent"
-      },
-      "accent": {
-        "name": "Brand Yellow",
-        "hex": "#ffdb32",
-        "text_on": "#111111",
-        "usage": "Highlight"
-      },
-      "success": {
-        "name": "Brand Green",
-        "hex": "#22c55e",
-        "text_on": "#111111",
-        "usage": "Success and go states"
-      }
-    },
     "surfaces": {
-      "cream": {
-        "hex": "#fbf7ef",
-        "usage": "Page background, paper"
-      },
-      "paper": {
-        "hex": "#ffffff",
-        "usage": "Cards and raised surfaces"
-      },
-      "ink": {
-        "hex": "#000000",
-        "usage": "Primary text"
-      },
-      "ink_muted": {
-        "hex": "#6b6b6b",
-        "usage": "Secondary text"
-      },
-      "night": {
-        "hex": "#111111",
-        "usage": "Dark surfaces"
-      }
+      "cream": { "hex": "#fbf7ef", "css": "--color-cream", "usage": "Public page background" },
+      "paper": { "hex": "#ffffff", "css": "--color-paper", "usage": "Cards, raised surfaces" },
+      "ink": { "hex": "#000000", "css": "--color-ink", "usage": "Text, borders, shadows" },
+      "ink_muted": { "hex": "#6b6b6b", "css": "--color-ink-muted", "usage": "Secondary text" },
+      "night": { "hex": "#111111", "css": "--color-night", "usage": "Dark bands. A design choice, not a theme switch." }
     },
-    "treatment": "Cream paper, pure ink, hard offset shadows, no blur."
-  },
-  "typography": {
-    "display": {
-      "family": "Archivo Black",
-      "fallback": "Arial Black, ui-sans-serif, sans-serif",
-      "source": "Google Fonts",
-      "usage": "Headlines, wordmark"
+    "palette": {
+      "orange": { "hex": "#f97316", "css": "--color-brand-orange", "text_on": "#000000", "usage": "Primary accent, primary buttons, highlights" },
+      "blue": { "hex": "#2563eb", "css": "--color-brand-blue", "text_on": "#ffffff", "usage": "Supporting accent, duotone dark" },
+      "yellow": { "hex": "#ffdb32", "css": "--color-brand-yellow", "text_on": "#000000", "usage": "Highlight boxes, default Highlight color" },
+      "green": { "hex": "#22c55e", "css": "--color-brand-green", "text_on": "#000000", "usage": "Success, supporting accent" }
     },
-    "primary": {
-      "family": "Inter",
-      "fallback": "ui-sans-serif, system-ui, sans-serif",
-      "source": "Google Fonts",
-      "default_weight": 400,
-      "usage": "Body copy"
-    }
-  },
-  "logos": {
-    "lockups": [],
     "rules": [
-      "Add combination_mark, logo_mark, wordmark, and avatar files under logos/ before using a mark in production.",
-      "Until lockups exist, set the word bradcerb in Archivo Black.",
-      "Do not use Triumph, Magnus, or Transform marks in this kit."
+      "Public pages are always light mode. Dark sections use bg-night as a band, not a theme.",
+      "Do not repoint shadcn semantic tokens (--background, --primary) to these brand tokens.",
+      "Borders and shadows are ink. Never soft gray shadows."
     ]
   },
+  "typography": {
+    "families": {
+      "display": { "family": "Archivo Black", "css": "font-display", "usage": "H1-H3, buttons, wordmark. Always uppercase for headings." },
+      "heading": { "family": "Space Grotesk", "weight": 700, "css": "font-heading", "usage": "H4-H6, card titles" },
+      "sans": { "family": "Inter", "css": "font-sans", "usage": "Body" },
+      "mono": { "family": "Space Mono", "css": "font-mono", "usage": "Labels, code, eyebrows" }
+    },
+    "scale": {
+      "h1": { "family": "display", "size": "72px", "line_height": 1.0, "tracking": "-2px", "transform": "uppercase" },
+      "h2": { "family": "display", "size": "56px", "line_height": 1.04, "tracking": "-2px", "transform": "uppercase" },
+      "h3": { "family": "display", "size": "40px", "line_height": 1.08, "tracking": "-1px", "transform": "uppercase" },
+      "h4": { "family": "heading", "size": "32px", "line_height": 1.1, "tracking": "-1px", "weight": 700 },
+      "h5": { "family": "heading", "size": "24px", "line_height": 1.14, "tracking": "-1px", "weight": 700 },
+      "h6": { "family": "heading", "size": "16px", "line_height": 1.3, "weight": 700 },
+      "body": { "family": "sans", "size": "16px", "line_height": 1.6 },
+      "small": { "family": "sans", "size": "14px", "line_height": 1.45, "color": "ink_muted" }
+    }
+  },
+  "space": {
+    "unit": "4px",
+    "scale": { "1": "4px", "2": "8px", "3": "12px", "4": "16px", "5": "20px", "6": "24px", "8": "32px", "10": "40px", "12": "48px", "16": "64px", "20": "80px", "24": "96px" }
+  },
+  "radius": {
+    "none": "0px",
+    "note": "Public UI is hard-edged. Do not use the shadcn 0.625rem radius on public pages."
+  },
+  "shadow": {
+    "treatment": "Hard offset, zero blur, ink only.",
+    "brutal-xs": "2px 2px 0 0 #000000",
+    "brutal-sm": "4px 4px 0 0 #000000",
+    "brutal": "4px 4px 0 0 #000000",
+    "brutal-md": "6px 6px 0 0 #000000",
+    "brutal-lg": "8px 8px 0 0 #000000"
+  },
+  "motion": {
+    "easings": {
+      "snap": "cubic-bezier(0.2, 0, 0, 1)",
+      "stamp": "cubic-bezier(0.34, 1.3, 0.64, 1)"
+    },
+    "durations": { "fast": 0.12, "base": 0.25, "slow": 0.4, "stamp": 0.35 },
+    "entrances": ["slideUp", "slideFromLeft", "slideFromRight", "stampIn", "wipeIn"],
+    "rules": [
+      "Reveal / RevealItem is the only entrance mechanism.",
+      "No standalone fades. Opacity may ride a transform for at most 150ms.",
+      "press-effect is the only hover/press treatment. Never ring or opacity-fade focus on public components.",
+      "GSAP is reserved for /about/story. Do not import it elsewhere.",
+      "Honor prefers-reduced-motion in CSS, JS, and with an alternate render when the experience itself must change."
+    ]
+  },
+  "interaction": {
+    "press_effect": {
+      "hover": "translate(-2px, -2px) + shadow-brutal-md",
+      "active": "translate(2px, 2px) + shadow none",
+      "focus_visible": "outline 2px ink, offset 2px"
+    }
+  },
+  "icons": {
+    "library": "@tabler/icons-react",
+    "stroke": "2px, round caps",
+    "forbidden": ["lucide-react"]
+  },
+  "image_treatments": {
+    "duotone": "Grayscale + mix-blend overlays. Default dark brand-blue, light brand-orange.",
+    "halftone": "Duotone plus 25% multiply dot overlay.",
+    "glitch": "Duotone plus hover-only clipped duplicates. Hidden on mobile.",
+    "flag": "Light duotone + border-2 ink + shadow-brutal-xs.",
+    "polaroid": "Separate Polaroid frame component, not a RetroImage treatment.",
+    "none": "Plain image."
+  },
+  "components": [
+    { "name": "RetroButton", "variants": ["primary", "ink", "outline", "ghost", "link"], "sizes": ["sm", "default", "lg", "icon"] },
+    { "name": "RetroCard", "accents": ["none", "orange", "blue", "green", "yellow", "ink"], "notes": "interactive adds press-effect" },
+    { "name": "RetroBadge" },
+    { "name": "RetroHeading", "sizes": ["h1", "h2", "h3", "h4", "h5", "h6"] },
+    { "name": "Highlight", "colors": ["yellow", "orange", "blue", "green", "ink"] },
+    { "name": "Marquee" },
+    { "name": "RetroStat" },
+    { "name": "RetroProgress" },
+    { "name": "RetroAccordion" },
+    { "name": "RetroInput" },
+    { "name": "RetroTextarea" },
+    { "name": "RetroSelect" },
+    { "name": "RetroCheckbox" },
+    { "name": "RetroLabel" },
+    { "name": "RetroSheet" },
+    { "name": "RetroDialog" },
+    { "name": "PixelEdge" },
+    { "name": "RetroImage" },
+    { "name": "Polaroid" },
+    { "name": "WindowFrame" },
+    { "name": "Reveal" },
+    { "name": "Section" }
+  ],
   "voice": {
-    "summary": "Clear, direct, warm. Short sentences. No filler. No hype.",
-    "tone": [
-      "clear",
-      "direct",
-      "warm",
-      "practical",
-      "human"
+    "summary": "Warm, pastoral, direct. Coffee-shop test: would Brad say this to one person across a table?",
+    "tone": ["warm", "pastoral", "direct", "specific", "honest"],
+    "mechanics": [
+      "Hyphens with spaces ( - ), never em dashes.",
+      "No exclamation marks on asks or CTAs.",
+      "Short paragraphs, one idea each.",
+      "No fabricated metrics."
     ],
     "avoid": [
-      "corporate jargon",
-      "hype",
-      "Triumph voice in personal work"
-    ],
-    "example_phrases": []
+      "game-changing",
+      "revolutionary",
+      "unlock your potential",
+      "synergy",
+      "cutting-edge",
+      "in today's fast-paced world",
+      "stakeholders",
+      "leverage as a verb",
+      "SEO expert"
+    ]
   },
   "rules": [
-    "brand-kit.json is the source of truth. Load it before producing branded work.",
-    "Do not invent colors, typefaces, or voice that contradict this file.",
-    "Keep personal brand work out of Triumph material, and Triumph material out of this kit.",
-    "Published site copy may be reused. New claims are not beliefs until Brad confirms them."
+    "This kit is the source of truth for personal/public Bradcerb work.",
+    "Public pages use RetroUI only. Never import shadcn/ui on a public page.",
+    "Keep Triumph visual tokens and Magnus out of this kit.",
+    "Load brand-kit.json before producing branded work.",
+    "New claims are not beliefs until Brad confirms them."
   ]
 }

@@ -3,113 +3,176 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Bradcerb Brand Kit</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Inter:wght@400;500;700&display=swap" rel="stylesheet" />
+  <title>Bradcerb Design System</title>
+  <link rel="stylesheet" href="tokens.css" />
   <style>
-    :root {
-      --cream: #fbf7ef;
-      --paper: #ffffff;
-      --ink: #000000;
-      --ink-muted: #6b6b6b;
-      --night: #111111;
-      --brand-orange: #f97316;
-      --brand-blue: #2563eb;
-      --brand-yellow: #ffdb32;
-      --brand-green: #22c55e;
-    }
     * { box-sizing: border-box; margin: 0; padding: 0; }
-    body {
-      font-family: Inter, ui-sans-serif, system-ui, sans-serif;
-      background: var(--cream);
-      color: var(--ink);
-      line-height: 1.6;
+    html { scroll-behavior: smooth; }
+    body { font-family: var(--font-sans); background: var(--color-cream); color: var(--color-ink); line-height: 1.6; }
+    a { color: inherit; }
+    header {
+      position: sticky; top: 0; z-index: 10;
+      background: var(--color-night); color: var(--color-cream);
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 16px 32px; border-bottom: 2px solid var(--color-ink);
     }
-    header, footer {
-      background: var(--night);
-      color: var(--cream);
-      padding: 24px 40px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-    .wordmark {
-      font-family: "Archivo Black", "Arial Black", sans-serif;
-      font-size: 22px;
-      letter-spacing: -0.02em;
-    }
-    header a, footer a { color: var(--brand-orange); text-decoration: none; font-size: 14px; }
-    .hero { padding: 72px 40px 48px; max-width: 880px; }
-    .eyebrow {
-      color: var(--brand-orange);
-      font-size: 12px;
-      font-weight: 700;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      margin-bottom: 12px;
-    }
-    h1, h2 { font-family: "Archivo Black", "Arial Black", sans-serif; letter-spacing: -0.03em; }
-    h1 { font-size: 44px; line-height: 1.1; margin-bottom: 16px; }
-    h2 { font-size: 24px; margin-bottom: 16px; }
-    .hero p { font-size: 18px; max-width: 640px; }
-    main { max-width: 880px; padding: 0 40px 72px; }
-    section { margin-top: 48px; }
-    .swatches { display: flex; flex-wrap: wrap; gap: 12px; }
-    .swatch {
-      background: var(--paper);
-      border: 2px solid var(--ink);
-      box-shadow: 4px 4px 0 var(--ink);
-      padding: 12px 14px;
-      min-width: 140px;
-    }
-    .dot { width: 28px; height: 28px; border: 2px solid var(--ink); margin-bottom: 8px; }
+    .wordmark { font-family: var(--font-display); font-size: 20px; letter-spacing: -0.02em; }
+    nav { display: flex; gap: 16px; flex-wrap: wrap; font-family: var(--font-mono); font-size: 12px; text-transform: uppercase; }
+    nav a { color: var(--color-brand-orange); text-decoration: none; }
+    .hero { padding: 72px 32px 48px; max-width: 960px; }
+    .eyebrow { font-family: var(--font-mono); font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--color-brand-orange); margin-bottom: 12px; }
+    h1, .h1 { font-family: var(--font-display); font-size: clamp(40px, 8vw, 72px); line-height: 1; letter-spacing: -2px; text-transform: uppercase; }
+    h2 { font-family: var(--font-display); font-size: clamp(28px, 5vw, 40px); letter-spacing: -1px; text-transform: uppercase; margin-bottom: 16px; }
+    h3 { font-family: var(--font-heading); font-weight: 700; font-size: 24px; margin-bottom: 8px; }
+    main { max-width: 960px; padding: 0 32px 96px; }
+    section { margin-top: 64px; padding-top: 16px; border-top: 2px solid var(--color-ink); }
+    .lede { font-size: 18px; max-width: 640px; margin: 16px 0 0; }
+    .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); gap: 12px; }
+    .swatch { background: var(--color-paper); border: 2px solid var(--color-ink); box-shadow: var(--shadow-brutal); padding: 12px; }
+    .dot { height: 40px; border: 2px solid var(--color-ink); margin-bottom: 8px; }
     .swatch strong { display: block; font-size: 13px; }
-    .swatch span { font-family: ui-monospace, monospace; font-size: 12px; color: var(--ink-muted); }
-    .files { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 16px; }
-    .card {
-      background: var(--paper);
-      border: 2px solid var(--ink);
-      box-shadow: 4px 4px 0 var(--ink);
-      padding: 20px;
+    .swatch span { font-family: var(--font-mono); font-size: 11px; color: var(--color-ink-muted); }
+    .type-row { margin: 16px 0; }
+    .type-meta { font-family: var(--font-mono); font-size: 11px; color: var(--color-ink-muted); }
+    .row { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; margin: 16px 0; }
+    .btn {
+      display: inline-flex; align-items: center; justify-content: center;
+      font-family: var(--font-display); font-size: 14px; letter-spacing: 2px; text-transform: uppercase;
+      height: 44px; padding: 0 24px; border: 2px solid var(--color-ink); text-decoration: none; cursor: pointer;
     }
-    .card code { color: var(--brand-orange); font-size: 13px; }
-    .card h3 { margin: 8px 0; font-size: 16px; }
-    .card p { font-size: 14px; color: var(--ink-muted); }
+    .btn-primary { background: var(--color-brand-orange); color: var(--color-ink); box-shadow: var(--shadow-brutal-sm); }
+    .btn-ink { background: var(--color-ink); color: var(--color-cream); box-shadow: var(--shadow-brutal-sm); }
+    .btn-outline { background: var(--color-paper); color: var(--color-ink); box-shadow: var(--shadow-brutal-sm); }
+    .btn-ghost { background: transparent; border-color: transparent; }
+    .btn-link { background: none; border: none; height: auto; padding: 0; text-decoration: underline; text-decoration-color: var(--color-brand-orange); text-underline-offset: 4px; text-decoration-thickness: 2px; letter-spacing: 0; text-transform: none; font-family: var(--font-sans); }
+    .card { background: var(--color-paper); border: 2px solid var(--color-ink); box-shadow: var(--shadow-brutal); padding: 24px; min-width: 200px; flex: 1; }
+    .card.accent-orange { border-top-width: 6px; border-top-color: var(--color-brand-orange); }
+    .card.accent-blue { border-top-width: 6px; border-top-color: var(--color-brand-blue); }
+    .card.accent-yellow { border-top-width: 6px; border-top-color: var(--color-brand-yellow); }
+    .mark { padding: 0.05em 0.2em; }
+    .mark-yellow { background: var(--color-brand-yellow); }
+    .mark-orange { background: var(--color-brand-orange); color: var(--color-paper); }
+    .mark-blue { background: var(--color-brand-blue); color: var(--color-paper); }
+    .field { border: 2px solid var(--color-ink); background: var(--color-paper); padding: 10px 12px; font: inherit; box-shadow: var(--shadow-brutal-xs); }
+    .field:focus { outline: 2px solid var(--color-ink); outline-offset: 2px; }
+    table { width: 100%; border-collapse: collapse; font-size: 14px; background: var(--color-paper); border: 2px solid var(--color-ink); box-shadow: var(--shadow-brutal); }
+    th, td { text-align: left; padding: 10px 12px; border-bottom: 1px solid var(--color-ink); vertical-align: top; }
+    th { font-family: var(--font-mono); font-size: 11px; text-transform: uppercase; background: var(--color-night); color: var(--color-cream); }
+    code { font-family: var(--font-mono); font-size: 12px; background: var(--color-paper); border: 1px solid var(--color-ink); padding: 1px 5px; }
+    .night { background: var(--color-night); color: var(--color-cream); padding: 32px; margin-top: 16px; }
+    footer { background: var(--color-night); color: var(--color-cream); padding: 24px 32px; display: flex; justify-content: space-between; }
+    footer a { color: var(--color-brand-orange); }
   </style>
 </head>
 <body>
   <header>
     <div class="wordmark">bradcerb</div>
-    <a href="https://github.com/bradcerb/bradcerb-brand">GitHub</a>
+    <nav>
+      <a href="#foundations">Foundations</a>
+      <a href="#type">Type</a>
+      <a href="#components">Components</a>
+      <a href="#motion">Motion</a>
+      <a href="#voice">Voice</a>
+      <a href="https://github.com/bradcerb/bradcerb-brand">GitHub</a>
+    </nav>
   </header>
   <div class="hero">
-    <p class="eyebrow">bradcerb.com / brand</p>
-    <h1>Bradcerb Brand Kit</h1>
-    <p>Single source of truth for Brad Erb's personal brand. Load <code>brand-kit.json</code> before producing branded work.</p>
+    <p class="eyebrow">bradcerb.com / design system</p>
+    <h1>RetroUI</h1>
+    <p class="lede">The public-site system for Bradcerb. Cream paper, pure ink, hard shadows. Implemented in <code>bradcerb/bradcerbcom</code>. Load <code>brand-kit.json</code> before you make anything.</p>
   </div>
   <main>
-    <section>
-      <p class="eyebrow">Color</p>
-      <h2>Palette</h2>
-      <div class="swatches">
+    <section id="foundations">
+      <p class="eyebrow">Foundations</p>
+      <h2>Color</h2>
+      <div class="grid">
         <div class="swatch"><div class="dot" style="background:#fbf7ef"></div><strong>Cream</strong><span>#fbf7ef</span></div>
+        <div class="swatch"><div class="dot" style="background:#ffffff"></div><strong>Paper</strong><span>#ffffff</span></div>
         <div class="swatch"><div class="dot" style="background:#000000"></div><strong>Ink</strong><span>#000000</span></div>
+        <div class="swatch"><div class="dot" style="background:#6b6b6b"></div><strong>Ink muted</strong><span>#6b6b6b</span></div>
         <div class="swatch"><div class="dot" style="background:#111111"></div><strong>Night</strong><span>#111111</span></div>
         <div class="swatch"><div class="dot" style="background:#f97316"></div><strong>Orange</strong><span>#f97316</span></div>
         <div class="swatch"><div class="dot" style="background:#2563eb"></div><strong>Blue</strong><span>#2563eb</span></div>
         <div class="swatch"><div class="dot" style="background:#ffdb32"></div><strong>Yellow</strong><span>#ffdb32</span></div>
         <div class="swatch"><div class="dot" style="background:#22c55e"></div><strong>Green</strong><span>#22c55e</span></div>
       </div>
-    </section>
-    <section>
-      <p class="eyebrow">Repository</p>
-      <h2>Key files</h2>
-      <div class="files">
-        <div class="card"><code>brand-kit.json</code><h3>Brand kit</h3><p>Machine-readable colors, type, voice, and socials. Start here.</p></div>
-        <div class="card"><code>brand-guidelines.md</code><h3>Guidelines</h3><p>Voice, visual rules, and what not to mix with Triumph or Transform.</p></div>
-        <div class="card"><code>logos/</code><h3>Logos</h3><p>Add combination mark, mark, wordmark, and avatar files here.</p></div>
+      <div class="night">
+        <p class="eyebrow">Night band</p>
+        <p>Dark sections are a layout choice. Public pages stay in light mode. Do not flip a theme.</p>
       </div>
+    </section>
+    <section id="type">
+      <p class="eyebrow">Typography</p>
+      <h2>Scale</h2>
+      <div class="type-row"><div class="h1">Display H1</div><div class="type-meta">Archivo Black · 72 / 1.0 / -2 · uppercase</div></div>
+      <div class="type-row"><div style="font-family:var(--font-display);font-size:56px;line-height:1.04;letter-spacing:-2px;text-transform:uppercase">Display H2</div><div class="type-meta">Archivo Black · 56</div></div>
+      <div class="type-row"><div style="font-family:var(--font-heading);font-weight:700;font-size:32px;letter-spacing:-1px">Heading H4</div><div class="type-meta">Space Grotesk Bold · 32</div></div>
+      <div class="type-row"><p>Body is Inter at 16 / 1.6. Secondary text uses ink-muted.</p><div class="type-meta">Inter · 16</div></div>
+      <div class="type-row"><p style="font-family:var(--font-mono);font-size:12px;letter-spacing:0.12em;text-transform:uppercase">Mono label</p><div class="type-meta">Space Mono</div></div>
+      <p>I build things that <mark class="mark mark-yellow">serve</mark> people. Highlights also come in <mark class="mark mark-orange">orange</mark> and <mark class="mark mark-blue">blue</mark>.</p>
+    </section>
+    <section id="shadow">
+      <p class="eyebrow">Elevation</p>
+      <h2>Hard shadows</h2>
+      <div class="row">
+        <div class="card" style="box-shadow:var(--shadow-brutal-xs)">xs 2px</div>
+        <div class="card" style="box-shadow:var(--shadow-brutal-sm)">sm 4px</div>
+        <div class="card" style="box-shadow:var(--shadow-brutal-md)">md 6px</div>
+        <div class="card" style="box-shadow:var(--shadow-brutal-lg)">lg 8px</div>
+      </div>
+      <p>Zero blur. Ink only. Public UI is square.</p>
+    </section>
+    <section id="components">
+      <p class="eyebrow">Components</p>
+      <h2>Buttons</h2>
+      <div class="row">
+        <button class="btn btn-primary press-effect">Primary</button>
+        <button class="btn btn-ink press-effect">Ink</button>
+        <button class="btn btn-outline press-effect">Outline</button>
+        <button class="btn btn-ghost">Ghost</button>
+        <button class="btn btn-link">Link</button>
+      </div>
+      <h2 style="margin-top:40px">Cards</h2>
+      <div class="row">
+        <div class="card accent-orange press-effect"><h3>Orange accent</h3><p>Interactive cards use press-effect.</p></div>
+        <div class="card accent-blue"><h3>Blue accent</h3><p>6px top border. Paper fill.</p></div>
+        <div class="card accent-yellow"><h3>Yellow accent</h3><p>Used on highlight cards.</p></div>
+      </div>
+      <h2 style="margin-top:40px">Form</h2>
+      <div class="row">
+        <input class="field press-effect" placeholder="Name" />
+        <input class="field press-effect" placeholder="Email" />
+      </div>
+      <p>Focus is outline + press-effect. Never a ring fade.</p>
+    </section>
+    <section id="inventory">
+      <p class="eyebrow">Inventory</p>
+      <h2>Primitives</h2>
+      <table>
+        <thead><tr><th>Component</th><th>Use</th></tr></thead>
+        <tbody>
+          <tr><td>RetroButton</td><td>primary / ink / outline / ghost / link</td></tr>
+          <tr><td>RetroCard</td><td>accents + optional interactive</td></tr>
+          <tr><td>RetroHeading + Highlight</td><td>type scale and inline marks</td></tr>
+          <tr><td>Form set</td><td>input, textarea, select, checkbox, label</td></tr>
+          <tr><td>RetroAccordion / Dialog / Sheet</td><td>FAQ, modal, slide-in</td></tr>
+          <tr><td>RetroStat / Progress / Badge</td><td>proof and chips</td></tr>
+          <tr><td>Section / PixelEdge / Marquee</td><td>page structure</td></tr>
+          <tr><td>RetroImage / Polaroid / WindowFrame</td><td>media treatments</td></tr>
+          <tr><td>Reveal</td><td>only entrance mechanism</td></tr>
+        </tbody>
+      </table>
+    </section>
+    <section id="motion">
+      <p class="eyebrow">Motion</p>
+      <h2>Rules</h2>
+      <p>Reveal is the only entrance. Workhorse is slideUp. stampIn is for badges. wipeIn is for images. No standalone fades. GSAP stays on the about story. Honor reduced motion in CSS, JS, and with an alternate render when the experience itself must change.</p>
+      <p style="margin-top:12px">Icons: <code>@tabler/icons-react</code> only.</p>
+    </section>
+    <section id="voice">
+      <p class="eyebrow">Voice</p>
+      <h2>How it sounds</h2>
+      <p>Warm, pastoral, direct. Short sentences. Specific over abstract. Hyphens with spaces ( - ), never em dashes. No fabricated metrics. No Triumph voice in personal work.</p>
     </section>
   </main>
   <footer>
