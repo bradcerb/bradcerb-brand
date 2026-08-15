@@ -1,6 +1,6 @@
 # Bradcerb Brand Guidelines
 
-Personal lane only. Not Triumph Tech. Not Transform.
+Personal kit for Brad Erb.
 
 ## Who this is
 
@@ -12,8 +12,7 @@ One-liner: Brad Erb helps mission-minded organizations put AI and agents to work
 
 ## Lanes
 
-- **Personal / this kit:** digital strategy, AI and agents, writing, speaking.
-- **Triumph:** Rock RMS and church-platform work. Do not use Triumph colors, type, or Magnus here.
+- **This kit:** digital strategy, AI and agents, writing, speaking.
 - **Transform:** builder proof only. Never pitch SEO from this kit.
 
 ## Voice
@@ -33,7 +32,7 @@ Avoid: game-changing, revolutionary, unlock your potential, synergy, cutting-edg
 
 ## Visual system
 
-Name: RetroUI. Neobrutalist retro. Cream paper, pure ink, hard offset shadows, no blur.
+Inspired by RetroUI. Cream paper, pure ink, hard offset shadows, no blur. Implemented in the BradcerbV1 theme. Public pages use Bootstrap 5 + Sass from this repo.
 
 Public pages are always light mode. A `night` band is a section treatment, not a theme.
 
@@ -62,7 +61,7 @@ Scale (desktop): H1 72 / H2 56 / H3 40 / H4 32 / H5 24 / H6 16.
 
 ### Shadow and radius
 
-Hard offset only. 2 / 4 / 6 / 8 px. Ink. Zero blur. Public UI is square. Do not use shadcn radius on public pages.
+Hard offset only. 2 / 4 / 6 / 8 px. Ink. Zero blur. Public UI is square.
 
 ### Interaction
 
@@ -70,18 +69,27 @@ Hard offset only. 2 / 4 / 6 / 8 px. Ink. Zero blur. Public UI is square. Do not 
 
 ### Motion
 
-Entrances go through Reveal. Workhorse is slideUp. stampIn is for badges and stats. wipeIn is for images. No standalone fades. GSAP stays on `/about/story`.
+Entrances go through Reveal. Workhorse is slideUp. stampIn is for badges and stats. wipeIn is for images. No standalone fades.
 
 Honor `prefers-reduced-motion` in CSS, in JS, and with an alternate render when the experience itself must change.
 
 ### Icons
 
-`@tabler/icons-react` only. 2px stroke, round caps. Never lucide.
+`@tabler/icons-react` only. 2px stroke, round caps.
 
 ### Images
 
-Treatments: duotone, halftone, glitch (hover, desktop only), flag, none. Polaroid is its own frame, not a RetroImage treatment. Default duotone is blue dark + orange light.
+Treatments: duotone, halftone, glitch (hover, desktop only), flag, none. Polaroid is its own frame.
+
+Kept assets:
+
+- Portrait: `assets/personas/brad-erb/brad-erb-portrait.png`
+- Avatar: `logos/avatar/brad-erb-avatar.png`
+- Bust: `assets/photos/bust.png` (classical sculpture, not a person)
+- Cityscape: `assets/photos/cityscape.png`
+
+Do not use the statue crop. Do not add work-sample images to this kit.
 
 ## Logo
 
-Until lockups land in `logos/`, set **bradcerb** in Archivo Black, ink on cream or cream on night.
+Wordmark is **Brad Erb** in Archivo Black, ink on cream or cream on night. Favicon and apple-touch icon live under `logos/`.

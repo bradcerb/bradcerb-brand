@@ -4,180 +4,111 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Bradcerb Design System</title>
-  <link rel="stylesheet" href="tokens.css" />
-  <style>
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    html { scroll-behavior: smooth; }
-    body { font-family: var(--font-sans); background: var(--color-cream); color: var(--color-ink); line-height: 1.6; }
-    a { color: inherit; }
-    header {
-      position: sticky; top: 0; z-index: 10;
-      background: var(--color-night); color: var(--color-cream);
-      display: flex; justify-content: space-between; align-items: center;
-      padding: 16px 32px; border-bottom: 2px solid var(--color-ink);
-    }
-    .wordmark { font-family: var(--font-display); font-size: 20px; letter-spacing: -0.02em; }
-    nav { display: flex; gap: 16px; flex-wrap: wrap; font-family: var(--font-mono); font-size: 12px; text-transform: uppercase; }
-    nav a { color: var(--color-brand-orange); text-decoration: none; }
-    .hero { padding: 72px 32px 48px; max-width: 960px; }
-    .eyebrow { font-family: var(--font-mono); font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--color-brand-orange); margin-bottom: 12px; }
-    h1, .h1 { font-family: var(--font-display); font-size: clamp(40px, 8vw, 72px); line-height: 1; letter-spacing: -2px; text-transform: uppercase; }
-    h2 { font-family: var(--font-display); font-size: clamp(28px, 5vw, 40px); letter-spacing: -1px; text-transform: uppercase; margin-bottom: 16px; }
-    h3 { font-family: var(--font-heading); font-weight: 700; font-size: 24px; margin-bottom: 8px; }
-    main { max-width: 960px; padding: 0 32px 96px; }
-    section { margin-top: 64px; padding-top: 16px; border-top: 2px solid var(--color-ink); }
-    .lede { font-size: 18px; max-width: 640px; margin: 16px 0 0; }
-    .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); gap: 12px; }
-    .swatch { background: var(--color-paper); border: 2px solid var(--color-ink); box-shadow: var(--shadow-brutal); padding: 12px; }
-    .dot { height: 40px; border: 2px solid var(--color-ink); margin-bottom: 8px; }
-    .swatch strong { display: block; font-size: 13px; }
-    .swatch span { font-family: var(--font-mono); font-size: 11px; color: var(--color-ink-muted); }
-    .type-row { margin: 16px 0; }
-    .type-meta { font-family: var(--font-mono); font-size: 11px; color: var(--color-ink-muted); }
-    .row { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; margin: 16px 0; }
-    .btn {
-      display: inline-flex; align-items: center; justify-content: center;
-      font-family: var(--font-display); font-size: 14px; letter-spacing: 2px; text-transform: uppercase;
-      height: 44px; padding: 0 24px; border: 2px solid var(--color-ink); text-decoration: none; cursor: pointer;
-    }
-    .btn-primary { background: var(--color-brand-orange); color: var(--color-ink); box-shadow: var(--shadow-brutal-sm); }
-    .btn-ink { background: var(--color-ink); color: var(--color-cream); box-shadow: var(--shadow-brutal-sm); }
-    .btn-outline { background: var(--color-paper); color: var(--color-ink); box-shadow: var(--shadow-brutal-sm); }
-    .btn-ghost { background: transparent; border-color: transparent; }
-    .btn-link { background: none; border: none; height: auto; padding: 0; text-decoration: underline; text-decoration-color: var(--color-brand-orange); text-underline-offset: 4px; text-decoration-thickness: 2px; letter-spacing: 0; text-transform: none; font-family: var(--font-sans); }
-    .card { background: var(--color-paper); border: 2px solid var(--color-ink); box-shadow: var(--shadow-brutal); padding: 24px; min-width: 200px; flex: 1; }
-    .card.accent-orange { border-top-width: 6px; border-top-color: var(--color-brand-orange); }
-    .card.accent-blue { border-top-width: 6px; border-top-color: var(--color-brand-blue); }
-    .card.accent-yellow { border-top-width: 6px; border-top-color: var(--color-brand-yellow); }
-    .mark { padding: 0.05em 0.2em; }
-    .mark-yellow { background: var(--color-brand-yellow); }
-    .mark-orange { background: var(--color-brand-orange); color: var(--color-paper); }
-    .mark-blue { background: var(--color-brand-blue); color: var(--color-paper); }
-    .field { border: 2px solid var(--color-ink); background: var(--color-paper); padding: 10px 12px; font: inherit; box-shadow: var(--shadow-brutal-xs); }
-    .field:focus { outline: 2px solid var(--color-ink); outline-offset: 2px; }
-    table { width: 100%; border-collapse: collapse; font-size: 14px; background: var(--color-paper); border: 2px solid var(--color-ink); box-shadow: var(--shadow-brutal); }
-    th, td { text-align: left; padding: 10px 12px; border-bottom: 1px solid var(--color-ink); vertical-align: top; }
-    th { font-family: var(--font-mono); font-size: 11px; text-transform: uppercase; background: var(--color-night); color: var(--color-cream); }
-    code { font-family: var(--font-mono); font-size: 12px; background: var(--color-paper); border: 1px solid var(--color-ink); padding: 1px 5px; }
-    .night { background: var(--color-night); color: var(--color-cream); padding: 32px; margin-top: 16px; }
-    footer { background: var(--color-night); color: var(--color-cream); padding: 24px 32px; display: flex; justify-content: space-between; }
-    footer a { color: var(--color-brand-orange); }
-  </style>
+  <link rel="icon" href="logos/logo-mark/brad-erb-mark.svg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Inter:wght@400;500;700&family=Space+Grotesk:wght@700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="css/brand.css" />
 </head>
 <body>
-  <header>
-    <div class="wordmark">bradcerb</div>
-    <nav>
-      <a href="#foundations">Foundations</a>
-      <a href="#type">Type</a>
-      <a href="#components">Components</a>
-      <a href="#motion">Motion</a>
-      <a href="#voice">Voice</a>
-      <a href="https://github.com/bradcerb/bradcerb-brand">GitHub</a>
-    </nav>
+  <header class="site-header border-bottom border-2 sticky-top">
+    <div class="container py-3 d-flex justify-content-between align-items-center flex-wrap gap-3">
+      <a class="wordmark" href="/">Brad Erb</a>
+      <nav class="d-flex gap-3 flex-wrap eyebrow">
+        <a href="#foundations">Foundations</a>
+        <a href="#type">Type</a>
+        <a href="#components">Components</a>
+        <a href="#voice">Voice</a>
+        <a href="https://github.com/bradcerb/bradcerb-brand">GitHub</a>
+      </nav>
+    </div>
   </header>
-  <div class="hero">
-    <p class="eyebrow">bradcerb.com / design system</p>
-    <h1>RetroUI</h1>
-    <p class="lede">The public-site system for Bradcerb. Cream paper, pure ink, hard shadows. Implemented in <code>bradcerb/bradcerbcom</code>. Load <code>brand-kit.json</code> before you make anything.</p>
-  </div>
-  <main>
-    <section id="foundations">
+
+  <section class="container py-5">
+    <div class="row align-items-center g-4">
+      <div class="col-lg-7">
+        <p class="eyebrow mb-2">Bradcerb Design System</p>
+        <h1 class="mb-3">Brad Erb</h1>
+        <p class="lead">Cream paper, pure ink, hard shadows. Inspired by RetroUI. Implemented in the <a href="https://github.com/bradcerb/bradcerbv1">BradcerbV1</a> theme. Public pages use Bootstrap 5 + Sass from this repo.</p>
+        <p>Load <code>brand-kit.json</code> before you make anything.</p>
+        <div class="d-flex flex-wrap gap-2 mt-3">
+          <a class="btn btn-primary press-effect" href="brand-guidelines.md">Guidelines</a>
+          <a class="btn btn-outline-dark press-effect" href="components.md">Components</a>
+        </div>
+      </div>
+      <div class="col-lg-5">
+        <figure class="photo-frame mb-0">
+          <img src="assets/personas/brad-erb/brad-erb-portrait.png" alt="Brad Erb" />
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <main class="container pb-5">
+    <section id="foundations" class="pt-4 mt-4 border-top border-2 border-dark">
       <p class="eyebrow">Foundations</p>
-      <h2>Color</h2>
-      <div class="grid">
-        <div class="swatch"><div class="dot" style="background:#fbf7ef"></div><strong>Cream</strong><span>#fbf7ef</span></div>
-        <div class="swatch"><div class="dot" style="background:#ffffff"></div><strong>Paper</strong><span>#ffffff</span></div>
-        <div class="swatch"><div class="dot" style="background:#000000"></div><strong>Ink</strong><span>#000000</span></div>
-        <div class="swatch"><div class="dot" style="background:#6b6b6b"></div><strong>Ink muted</strong><span>#6b6b6b</span></div>
-        <div class="swatch"><div class="dot" style="background:#111111"></div><strong>Night</strong><span>#111111</span></div>
-        <div class="swatch"><div class="dot" style="background:#f97316"></div><strong>Orange</strong><span>#f97316</span></div>
-        <div class="swatch"><div class="dot" style="background:#2563eb"></div><strong>Blue</strong><span>#2563eb</span></div>
-        <div class="swatch"><div class="dot" style="background:#ffdb32"></div><strong>Yellow</strong><span>#ffdb32</span></div>
-        <div class="swatch"><div class="dot" style="background:#22c55e"></div><strong>Green</strong><span>#22c55e</span></div>
+      <h2 class="mb-4">Color</h2>
+      <div class="row g-3">
+        <div class="col-6 col-md-4 col-lg-2"><div class="swatch"><div class="dot" style="background:#fbf7ef"></div><strong>Cream</strong><br /><span>#fbf7ef</span></div></div>
+        <div class="col-6 col-md-4 col-lg-2"><div class="swatch"><div class="dot" style="background:#ffffff"></div><strong>Paper</strong><br /><span>#ffffff</span></div></div>
+        <div class="col-6 col-md-4 col-lg-2"><div class="swatch"><div class="dot" style="background:#000000"></div><strong>Ink</strong><br /><span>#000000</span></div></div>
+        <div class="col-6 col-md-4 col-lg-2"><div class="swatch"><div class="dot" style="background:#6b6b6b"></div><strong>Ink muted</strong><br /><span>#6b6b6b</span></div></div>
+        <div class="col-6 col-md-4 col-lg-2"><div class="swatch"><div class="dot" style="background:#111111"></div><strong>Night</strong><br /><span>#111111</span></div></div>
+        <div class="col-6 col-md-4 col-lg-2"><div class="swatch"><div class="dot" style="background:#f97316"></div><strong>Orange</strong><br /><span>#f97316</span></div></div>
+        <div class="col-6 col-md-4 col-lg-2"><div class="swatch"><div class="dot" style="background:#2563eb"></div><strong>Blue</strong><br /><span>#2563eb</span></div></div>
+        <div class="col-6 col-md-4 col-lg-2"><div class="swatch"><div class="dot" style="background:#ffdb32"></div><strong>Yellow</strong><br /><span>#ffdb32</span></div></div>
+        <div class="col-6 col-md-4 col-lg-2"><div class="swatch"><div class="dot" style="background:#22c55e"></div><strong>Green</strong><br /><span>#22c55e</span></div></div>
       </div>
-      <div class="night">
-        <p class="eyebrow">Night band</p>
-        <p>Dark sections are a layout choice. Public pages stay in light mode. Do not flip a theme.</p>
+      <div class="night-band p-4 mt-4">
+        <p class="eyebrow mb-2">Night band</p>
+        <p class="mb-0">Dark sections are a layout choice. Public pages stay in light mode. Do not flip a theme.</p>
       </div>
     </section>
-    <section id="type">
+
+    <section id="type" class="pt-4 mt-5 border-top border-2 border-dark">
       <p class="eyebrow">Typography</p>
-      <h2>Scale</h2>
-      <div class="type-row"><div class="h1">Display H1</div><div class="type-meta">Archivo Black · 72 / 1.0 / -2 · uppercase</div></div>
-      <div class="type-row"><div style="font-family:var(--font-display);font-size:56px;line-height:1.04;letter-spacing:-2px;text-transform:uppercase">Display H2</div><div class="type-meta">Archivo Black · 56</div></div>
-      <div class="type-row"><div style="font-family:var(--font-heading);font-weight:700;font-size:32px;letter-spacing:-1px">Heading H4</div><div class="type-meta">Space Grotesk Bold · 32</div></div>
-      <div class="type-row"><p>Body is Inter at 16 / 1.6. Secondary text uses ink-muted.</p><div class="type-meta">Inter · 16</div></div>
-      <div class="type-row"><p style="font-family:var(--font-mono);font-size:12px;letter-spacing:0.12em;text-transform:uppercase">Mono label</p><div class="type-meta">Space Mono</div></div>
-      <p>I build things that <mark class="mark mark-yellow">serve</mark> people. Highlights also come in <mark class="mark mark-orange">orange</mark> and <mark class="mark mark-blue">blue</mark>.</p>
+      <h2 class="mb-4">Scale</h2>
+      <h1>Display H1</h1>
+      <p class="text-muted font-monospace small">Archivo Black / 72 / uppercase</p>
+      <h4>Heading H4</h4>
+      <p class="text-muted font-monospace small">Space Grotesk Bold / 32</p>
+      <p>Body is Inter at 16 / 1.6. I build things that <mark class="mark-yellow">serve</mark> people. Highlights also come in <mark class="mark-orange">orange</mark> and <mark class="mark-blue">blue</mark>.</p>
     </section>
-    <section id="shadow">
-      <p class="eyebrow">Elevation</p>
-      <h2>Hard shadows</h2>
-      <div class="row">
-        <div class="card" style="box-shadow:var(--shadow-brutal-xs)">xs 2px</div>
-        <div class="card" style="box-shadow:var(--shadow-brutal-sm)">sm 4px</div>
-        <div class="card" style="box-shadow:var(--shadow-brutal-md)">md 6px</div>
-        <div class="card" style="box-shadow:var(--shadow-brutal-lg)">lg 8px</div>
-      </div>
-      <p>Zero blur. Ink only. Public UI is square.</p>
-    </section>
-    <section id="components">
+
+    <section id="components" class="pt-4 mt-5 border-top border-2 border-dark">
       <p class="eyebrow">Components</p>
-      <h2>Buttons</h2>
-      <div class="row">
-        <button class="btn btn-primary press-effect">Primary</button>
-        <button class="btn btn-ink press-effect">Ink</button>
-        <button class="btn btn-outline press-effect">Outline</button>
-        <button class="btn btn-ghost">Ghost</button>
-        <button class="btn btn-link">Link</button>
+      <h2 class="mb-4">Buttons</h2>
+      <div class="d-flex flex-wrap gap-2 mb-5">
+        <button class="btn btn-primary press-effect" type="button">Primary</button>
+        <button class="btn btn-dark press-effect" type="button">Ink</button>
+        <button class="btn btn-outline-dark press-effect" type="button">Outline</button>
       </div>
-      <h2 style="margin-top:40px">Cards</h2>
-      <div class="row">
-        <div class="card accent-orange press-effect"><h3>Orange accent</h3><p>Interactive cards use press-effect.</p></div>
-        <div class="card accent-blue"><h3>Blue accent</h3><p>6px top border. Paper fill.</p></div>
-        <div class="card accent-yellow"><h3>Yellow accent</h3><p>Used on highlight cards.</p></div>
+      <h2 class="mb-4">Cards</h2>
+      <div class="row g-3">
+        <div class="col-md-4"><div class="card card-accent-orange press-effect h-100"><div class="card-body"><h5>Orange accent</h5><p class="mb-0">Interactive cards use press-effect.</p></div></div></div>
+        <div class="col-md-4"><div class="card card-accent-blue h-100"><div class="card-body"><h5>Blue accent</h5><p class="mb-0">6px top border. Paper fill.</p></div></div></div>
+        <div class="col-md-4"><div class="card card-accent-yellow h-100"><div class="card-body"><h5>Yellow accent</h5><p class="mb-0">Used on highlight cards.</p></div></div></div>
       </div>
-      <h2 style="margin-top:40px">Form</h2>
-      <div class="row">
-        <input class="field press-effect" placeholder="Name" />
-        <input class="field press-effect" placeholder="Email" />
+      <h2 class="mt-5 mb-3">Form</h2>
+      <div class="row g-3">
+        <div class="col-md-6"><input class="form-control" placeholder="Name" /></div>
+        <div class="col-md-6"><input class="form-control" type="email" placeholder="Email" /></div>
       </div>
-      <p>Focus is outline + press-effect. Never a ring fade.</p>
     </section>
-    <section id="inventory">
-      <p class="eyebrow">Inventory</p>
-      <h2>Primitives</h2>
-      <table>
-        <thead><tr><th>Component</th><th>Use</th></tr></thead>
-        <tbody>
-          <tr><td>RetroButton</td><td>primary / ink / outline / ghost / link</td></tr>
-          <tr><td>RetroCard</td><td>accents + optional interactive</td></tr>
-          <tr><td>RetroHeading + Highlight</td><td>type scale and inline marks</td></tr>
-          <tr><td>Form set</td><td>input, textarea, select, checkbox, label</td></tr>
-          <tr><td>RetroAccordion / Dialog / Sheet</td><td>FAQ, modal, slide-in</td></tr>
-          <tr><td>RetroStat / Progress / Badge</td><td>proof and chips</td></tr>
-          <tr><td>Section / PixelEdge / Marquee</td><td>page structure</td></tr>
-          <tr><td>RetroImage / Polaroid / WindowFrame</td><td>media treatments</td></tr>
-          <tr><td>Reveal</td><td>only entrance mechanism</td></tr>
-        </tbody>
-      </table>
-    </section>
-    <section id="motion">
-      <p class="eyebrow">Motion</p>
-      <h2>Rules</h2>
-      <p>Reveal is the only entrance. Workhorse is slideUp. stampIn is for badges. wipeIn is for images. No standalone fades. GSAP stays on the about story. Honor reduced motion in CSS, JS, and with an alternate render when the experience itself must change.</p>
-      <p style="margin-top:12px">Icons: <code>@tabler/icons-react</code> only.</p>
-    </section>
-    <section id="voice">
+
+    <section id="voice" class="pt-4 mt-5 border-top border-2 border-dark">
       <p class="eyebrow">Voice</p>
-      <h2>How it sounds</h2>
-      <p>Warm, pastoral, direct. Short sentences. Specific over abstract. Hyphens with spaces ( - ), never em dashes. No fabricated metrics. No Triumph voice in personal work.</p>
+      <h2 class="mb-3">How it sounds</h2>
+      <p>Warm, pastoral, direct. Short sentences. Specific over abstract. Hyphens with spaces ( - ), never em dashes. No fabricated metrics.</p>
     </section>
   </main>
-  <footer>
-    <div class="wordmark">bradcerb</div>
-    <a href="https://bradcerb.com">bradcerb.com</a>
+
+  <footer class="site-footer border-top border-2">
+    <div class="container py-4 d-flex justify-content-between align-items-center flex-wrap gap-2">
+      <div class="wordmark">Brad Erb</div>
+      <a href="https://bradcerb.com">bradcerb.com</a>
+    </div>
   </footer>
 </body>
 </html>

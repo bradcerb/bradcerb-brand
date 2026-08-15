@@ -1,0 +1,76 @@
+// Bradcerb design system tokens.
+// Inspired by RetroUI. Implemented in the BradcerbV1 theme.
+
+$cream: #fbf7ef;
+$paper: #ffffff;
+$ink: #000000;
+$ink-muted: #6b6b6b;
+$night: #111111;
+$brand-orange: #f97316;
+$brand-blue: #2563eb;
+$brand-yellow: #ffdb32;
+$brand-green: #22c55e;
+
+$font-display: "Archivo Black", "Arial Black", ui-sans-serif, sans-serif;
+$font-heading: "Space Grotesk", ui-sans-serif, system-ui, sans-serif;
+$font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+$font-mono: "Space Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+
+$primary: $brand-orange;
+$secondary: $brand-blue;
+$success: $brand-green;
+$warning: $brand-yellow;
+$info: $brand-blue;
+$dark: $night;
+$light: $cream;
+
+$body-bg: $cream;
+$body-color: $ink;
+$link-color: $ink;
+$link-hover-color: $ink;
+
+$border-width: 2px;
+$border-color: $ink;
+$border-radius: 0;
+$border-radius-sm: 0;
+$border-radius-lg: 0;
+$border-radius-xl: 0;
+$border-radius-xxl: 0;
+$border-radius-pill: 0;
+
+$enable-rounded: false;
+$enable-shadows: false;
+$enable-gradients: false;
+
+$font-family-sans-serif: $font-sans;
+$font-family-monospace: $font-mono;
+$headings-font-family: $font-display;
+$headings-font-weight: 400;
+$headings-color: $ink;
+
+$h1-font-size: 4.5rem;
+$h2-font-size: 3.5rem;
+$h3-font-size: 2.5rem;
+$h4-font-size: 2rem;
+$h5-font-size: 1.5rem;
+$h6-font-size: 1rem;
+
+$input-bg: $paper;
+$input-border-color: $ink;
+$input-focus-border-color: $ink;
+$input-focus-box-shadow: none;
+$input-border-radius: 0;
+
+$btn-border-radius: 0;
+$btn-font-family: $font-display;
+$btn-font-weight: 400;
+$btn-border-width: 2px;
+
+$card-bg: $paper;
+$card-border-color: $ink;
+$card-border-radius: 0;
+$card-border-width: 2px;
+
+$box-shadow: 4px 4px 0 0 $ink;
+$box-shadow-sm: 2px 2px 0 0 $ink;
+$box-shadow-lg: 8px 8px 0 0 $ink;

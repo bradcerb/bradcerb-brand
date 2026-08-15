@@ -1,17 +1,18 @@
 {
   "version": "2026.08.15",
-  "name": "Bradcerb RetroUI",
+  "name": "Bradcerb Design System",
   "base_url": "https://branding.bradcerb.com",
   "source": {
-    "implementation": "https://github.com/bradcerb/bradcerbcom",
-    "skill": ".claude/skills/retroui-components/SKILL.md",
-    "css": "resources/css/app.css",
-    "components": "resources/js/components/retroui/",
+    "implementation": "https://github.com/bradcerb/bradcerbv1",
+    "theme": "BradcerbV1",
+    "inspiration": "RetroUI",
+    "css": "src/css/site.css",
     "figma_inspiration": "https://www.figma.com/file/d42XW4f4UDSD1EgcHxIsYf"
   },
   "brand": {
     "name": "Brad Erb",
     "public_name": "Bradcerb",
+    "wordmark": "Brad Erb",
     "tagline": "I build and teach AI work loops that turn recurring work into reliable, human-supervised systems.",
     "one_liner": "Brad Erb helps mission-minded organizations put AI and agents to work, amplifying what their teams already do well, without losing the human part.",
     "website": "https://bradcerb.com",
@@ -19,7 +20,6 @@
   },
   "lanes": {
     "personal": "This kit. Digital strategy, AI and agents consulting, writing, speaking.",
-    "triumph": "Rock RMS and church-platform work stays at Triumph Tech. Do not use Triumph visual tokens here.",
     "transform": "Builder proof only. Never pitch SEO services from this kit."
   },
   "color_system": {
@@ -37,8 +37,7 @@
       "green": { "hex": "#22c55e", "css": "--color-brand-green", "text_on": "#000000", "usage": "Success, supporting accent" }
     },
     "rules": [
-      "Public pages are always light mode. Dark sections use bg-night as a band, not a theme.",
-      "Do not repoint shadcn semantic tokens (--background, --primary) to these brand tokens.",
+      "Public pages are always light mode. Dark sections use a night band, not a theme.",
       "Borders and shadows are ink. Never soft gray shadows."
     ]
   },
@@ -66,7 +65,7 @@
   },
   "radius": {
     "none": "0px",
-    "note": "Public UI is hard-edged. Do not use the shadcn 0.625rem radius on public pages."
+    "note": "Public UI is hard-edged and square."
   },
   "shadow": {
     "treatment": "Hard offset, zero blur, ink only.",
@@ -84,11 +83,10 @@
     "durations": { "fast": 0.12, "base": 0.25, "slow": 0.4, "stamp": 0.35 },
     "entrances": ["slideUp", "slideFromLeft", "slideFromRight", "stampIn", "wipeIn"],
     "rules": [
-      "Reveal / RevealItem is the only entrance mechanism.",
+      "Reveal is the only entrance mechanism.",
       "No standalone fades. Opacity may ride a transform for at most 150ms.",
-      "press-effect is the only hover/press treatment. Never ring or opacity-fade focus on public components.",
-      "GSAP is reserved for /about/story. Do not import it elsewhere.",
-      "Honor prefers-reduced-motion in CSS, JS, and with an alternate render when the experience itself must change."
+      "press-effect is the only hover/press treatment. Never a ring or opacity-fade focus.",
+      "Honor prefers-reduced-motion in CSS, in JS, and with an alternate render when the experience itself must change."
     ]
   },
   "interaction": {
@@ -100,36 +98,57 @@
   },
   "icons": {
     "library": "@tabler/icons-react",
-    "stroke": "2px, round caps",
-    "forbidden": ["lucide-react"]
+    "stroke": "2px, round caps"
   },
   "image_treatments": {
     "duotone": "Grayscale + mix-blend overlays. Default dark brand-blue, light brand-orange.",
     "halftone": "Duotone plus 25% multiply dot overlay.",
     "glitch": "Duotone plus hover-only clipped duplicates. Hidden on mobile.",
-    "flag": "Light duotone + border-2 ink + shadow-brutal-xs.",
-    "polaroid": "Separate Polaroid frame component, not a RetroImage treatment.",
+    "flag": "Light duotone + 2px ink border + shadow-brutal-xs.",
+    "polaroid": "Separate Polaroid frame, not an image treatment.",
     "none": "Plain image."
   },
+  "logos": {
+    "wordmark": { "text": "Brad Erb", "treatment": "Typographic. Archivo Black, ink on cream or cream on night." },
+    "avatar": "logos/avatar/brad-erb-avatar.png",
+    "mark": "logos/logo-mark/brad-erb-mark.svg",
+    "favicon": "logos/logo-mark/favicon.ico"
+  },
+  "personas": [
+    {
+      "name": "Brad Erb",
+      "role": "principal",
+      "portrait": "assets/personas/brad-erb/brad-erb-portrait.png"
+    }
+  ],
+  "assets": {
+    "photos": [
+      "assets/photos/bust.png",
+      "assets/photos/cityscape.png"
+    ],
+    "notes": [
+      "bust.png is a classical sculpture, not a person. Never use it as a persona photo."
+    ]
+  },
   "components": [
-    { "name": "RetroButton", "variants": ["primary", "ink", "outline", "ghost", "link"], "sizes": ["sm", "default", "lg", "icon"] },
-    { "name": "RetroCard", "accents": ["none", "orange", "blue", "green", "yellow", "ink"], "notes": "interactive adds press-effect" },
-    { "name": "RetroBadge" },
-    { "name": "RetroHeading", "sizes": ["h1", "h2", "h3", "h4", "h5", "h6"] },
+    { "name": "Button", "variants": ["primary", "ink", "outline", "ghost", "link"], "sizes": ["sm", "default", "lg", "icon"] },
+    { "name": "Card", "accents": ["none", "orange", "blue", "green", "yellow", "ink"], "notes": "interactive adds press-effect" },
+    { "name": "Badge" },
+    { "name": "Heading", "sizes": ["h1", "h2", "h3", "h4", "h5", "h6"] },
     { "name": "Highlight", "colors": ["yellow", "orange", "blue", "green", "ink"] },
     { "name": "Marquee" },
-    { "name": "RetroStat" },
-    { "name": "RetroProgress" },
-    { "name": "RetroAccordion" },
-    { "name": "RetroInput" },
-    { "name": "RetroTextarea" },
-    { "name": "RetroSelect" },
-    { "name": "RetroCheckbox" },
-    { "name": "RetroLabel" },
-    { "name": "RetroSheet" },
-    { "name": "RetroDialog" },
+    { "name": "Stat" },
+    { "name": "Progress" },
+    { "name": "Accordion" },
+    { "name": "Input" },
+    { "name": "Textarea" },
+    { "name": "Select" },
+    { "name": "Checkbox" },
+    { "name": "Label" },
+    { "name": "Sheet" },
+    { "name": "Dialog" },
     { "name": "PixelEdge" },
-    { "name": "RetroImage" },
+    { "name": "Image" },
     { "name": "Polaroid" },
     { "name": "WindowFrame" },
     { "name": "Reveal" },
@@ -158,8 +177,7 @@
   },
   "rules": [
     "This kit is the source of truth for personal/public Bradcerb work.",
-    "Public pages use RetroUI only. Never import shadcn/ui on a public page.",
-    "Keep Triumph visual tokens and Magnus out of this kit.",
+    "Public pages use this system plus Bootstrap 5. Do not import a second component library on a public page.",
     "Load brand-kit.json before producing branded work.",
     "New claims are not beliefs until Brad confirms them."
   ]

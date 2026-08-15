@@ -1,0 +1,12 @@
+{
+  "name": "bradcerb-brand",
+  "private": true,
+  "description": "Bradcerb design system. Inspired by RetroUI. Implemented in the BradcerbV1 theme.",
+  "scripts": {
+    "build:css": "sass scss/main.scss css/brand.css --no-source-map --load-path=node_modules"
+  },
+  "devDependencies": {
+    "bootstrap": "^5.3.8",
+    "sass": "^1.90.0"
+  }
+}
