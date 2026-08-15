@@ -123,21 +123,11 @@
   ],
   "assets": {
     "photos": [
-      "assets/photos/cityscape.png",
-      "assets/photos/statue.png",
-      "assets/photos/typewriter.jpg",
       "assets/photos/bust.png",
-      "assets/photos/rx2026.png"
-    ],
-    "samples": [
-      "assets/samples/check-in-celebrations.jpg",
-      "assets/samples/making-data-driven-decisions.png",
-      "assets/samples/rx2026.png",
-      "assets/samples/transformseo-dataforseo.png"
+      "assets/photos/cityscape.png"
     ],
     "notes": [
-      "bust.png is a classical sculpture, not a person. Never use it as a persona photo.",
-      "Transform sample images are builder proof only. Never pitch SEO from this kit."
+      "bust.png is a classical sculpture, not a person. Never use it as a persona photo."
     ]
   },
   "components": [
